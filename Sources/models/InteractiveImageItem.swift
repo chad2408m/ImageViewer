@@ -10,6 +10,8 @@ import Foundation
 import SwiftUI
 import Observation
 
+//CMMTODO: Add properties for crop image insets
+//CMMTODO: Add two environment values for: .interactiveImageClipShape(_:padding:), .interactiveImageOverlay(visibility:), use the foreground style for overlay
 //CMMTODO: Document
 @Observable
 public class InteractiveImageItem {
@@ -37,7 +39,7 @@ public class InteractiveImageItem {
     ///
     /// Defaults to the image size until placed into a ``ImageResizer``.
     @ObservationIgnored
-    private var lastKnownContainerSize: CGSize
+    internal private(set) var lastKnownContainerSize: CGSize
     
     /// Creates a new resizable image item for the given SwiftUI image.
     ///
