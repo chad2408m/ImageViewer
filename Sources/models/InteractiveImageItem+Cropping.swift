@@ -49,7 +49,8 @@ extension InteractiveImageItem {
                 .offset(self.translation)
         }()
         
-        let clippedFrame = AVMakeRect(aspectRatio: CGSize(width: 1, height: 1), insideRect: CGRect(origin: .zero, size: self.lastKnownContainerSize))
+        let clippedFrame = AVMakeRect(aspectRatio: CGSize(width: 1, height: 1), 
+                                      insideRect: CGRect(origin: .zero, size: self.lastKnownContainerSize))
                                       
         let clippedContent: some View = {
             viewContent

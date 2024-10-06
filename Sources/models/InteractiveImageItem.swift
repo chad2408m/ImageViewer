@@ -14,7 +14,7 @@ import Observation
 //CMMTODO: Add two environment values for: .interactiveImageClipShape(_:padding:), .interactiveImageOverlay(visibility:), use the foreground style for overlay
 //CMMTODO: Document
 @Observable
-public class InteractiveImageItem {
+public class InteractiveImageItem: Identifiable {
     /// The image to display inside an ``ImageResizingView`` view.
     public let image: Image
     
@@ -40,6 +40,11 @@ public class InteractiveImageItem {
     /// Defaults to the image size until placed into a ``ImageResizer``.
     @ObservationIgnored
     internal private(set) var lastKnownContainerSize: CGSize
+    
+    /// Each interactive image item is identified by it's instance.
+    public var id: AnyObject {
+        return self
+    }
     
     /// Creates a new resizable image item for the given SwiftUI image.
     ///
